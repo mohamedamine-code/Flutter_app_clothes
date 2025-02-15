@@ -130,7 +130,8 @@ class Home2 extends StatelessWidget {
                     ),
                     Text(
                       "See all",
-                      style: TextStyle(color: const Color.fromARGB(208, 0, 0, 0)),
+                      style:
+                          TextStyle(color: const Color.fromARGB(208, 0, 0, 0)),
                     ),
                   ],
                 ),
@@ -147,13 +148,18 @@ class Home2 extends StatelessWidget {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
                         ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(30),
-                          child: Image.asset(
-                            "assets/img/image 15.png",
-                            width: 225,
-                            height: 287,
-                            fit: BoxFit.cover,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/home3');
+                          },
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(30),
+                            child: Image.asset(
+                              "assets/img/image 15.png",
+                              width: 225,
+                              height: 287,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
@@ -207,7 +213,7 @@ class Home2 extends StatelessWidget {
                 SizedBox(
                   height: 15,
                 ),
-                  Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -219,7 +225,8 @@ class Home2 extends StatelessWidget {
                     ),
                     Text(
                       "See all",
-                      style: TextStyle(color: const Color.fromARGB(208, 0, 0, 0)),
+                      style:
+                          TextStyle(color: const Color.fromARGB(208, 0, 0, 0)),
                     ),
                   ],
                 ),
@@ -239,7 +246,9 @@ class Home2 extends StatelessWidget {
                           width: 120,
                         ),
                       ),
-                      SizedBox(width: 15,),
+                      SizedBox(
+                        width: 15,
+                      ),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(50),
                         child: Image.asset(
@@ -249,7 +258,9 @@ class Home2 extends StatelessWidget {
                           width: 120,
                         ),
                       ),
-                    SizedBox(width: 15,),
+                      SizedBox(
+                        width: 15,
+                      ),
                       ClipRRect(
                         borderRadius: BorderRadius.circular(50),
                         child: Image.asset(
@@ -259,8 +270,10 @@ class Home2 extends StatelessWidget {
                           width: 120,
                         ),
                       ),
-                    SizedBox(width: 15,),
-                    ClipRRect(
+                      SizedBox(
+                        width: 15,
+                      ),
+                      ClipRRect(
                         borderRadius: BorderRadius.circular(50),
                         child: Image.asset(
                           "assets/img/Mask Group.png",
