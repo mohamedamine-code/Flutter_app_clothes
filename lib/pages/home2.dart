@@ -282,9 +282,15 @@ class Home2 extends StatelessWidget {
                           width: 120,
                         ),
                       ),
+                      
                     ],
+                    
                   ),
-                )
+                  
+                ),
+                SizedBox(
+                        height: 10,
+                      ),
               ],
             ),
           ),

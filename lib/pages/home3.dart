@@ -34,20 +34,98 @@ class home3 extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                    Container(
-                      height: 62,
-                      width: 62,
-                      decoration: BoxDecoration(
-                          color: Colors.white, shape: BoxShape.circle),
-                      child: Icon(
-                        Icons.heart_broken,
-                        color: Color.fromARGB(255, 255, 135, 7),
-                        size: 25,
-                      ),
+                  Container(
+                    height: 62,
+                    width: 62,
+                    decoration: BoxDecoration(
+                        color: Colors.white, shape: BoxShape.circle),
+                    child: Icon(
+                      Icons.heart_broken,
+                      color: Color.fromARGB(255, 255, 135, 7),
+                      size: 25,
                     ),
-                  
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Column(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.only(left: 5,right: 5,top: 10,),
+                          alignment: Alignment.center,
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.amber,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Text(
+                            "S",
+                            style: TextStyle(
+                              fontSize: 25,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(5),
+                          alignment: Alignment.center,
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.amber,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Text(
+                            "M",
+                            style: TextStyle(
+                              fontSize: 25,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(5),
+                          alignment: Alignment.center,
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.amber,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Text(
+                            "L",
+                            style: TextStyle(
+                              fontSize: 25,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(left: 5,right: 5,bottom: 10,),
+                          alignment: Alignment.center,
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            color: Colors.amber,
+                            shape: BoxShape.circle,
+                          ),
+                          child: Text(
+                            "XL",
+                            style: TextStyle(
+                              fontSize: 25,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
                 ],
               )
+            
             ],
           ),
         ),
