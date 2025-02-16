@@ -5,7 +5,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class Home2 extends StatelessWidget {
   const Home2({super.key});
-
+  // final <string>
+  static const List<String> img = [
+    'assets/img/image 14.png',
+    'assets/img/image 15.png',
+    'assets/img/image 21.png',
+    'assets/img/Mask Group.png'
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -88,7 +94,7 @@ class Home2 extends StatelessWidget {
                       child: TextField(
                         decoration: InputDecoration(
                             prefixIcon: Icon(Icons.search),
-                            hintText: "Search your style",
+                            hintText: "Seavfffrch your style",
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(20)),
@@ -138,78 +144,102 @@ class Home2 extends StatelessWidget {
                 SizedBox(
                   height: 15,
                 ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 225,
-                        height: 287,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.pushNamed(context, '/home3');
-                          },
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(30),
-                            child: Image.asset(
-                              "assets/img/image 15.png",
-                              width: 225,
-                              height: 287,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Container(
-                        height: 287,
-                        width: 225,
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              BorderRadius.circular(30), // Coins arrondis
-                        ),
+                // SingleChildScrollView(
+                //   scrollDirection: Axis.horizontal,
+                //   child: Row(
+                //     children: [
+                //       Container(
+                //         width: 225,
+                //         height: 287,
+                //         decoration: BoxDecoration(
+                //           borderRadius: BorderRadius.circular(30),
+                //         ),
+                //         child: GestureDetector(
+                //           onTap: () {
+                //             Navigator.pushNamed(context, '/home3');
+                //           },
+                //           child: ClipRRect(
+                //             borderRadius: BorderRadius.circular(30),
+                //             child: Image.asset(
+                //               "assets/img/image 15.png",
+                //               width: 225,
+                //               height: 287,
+                //               fit: BoxFit.cover,
+                //             ),
+                //           ),
+                //         ),
+                //       ),
+                //       SizedBox(
+                //         width: 15,
+                //       ),
+                //       Container(
+                //         height: 287,
+                //         width: 225,
+                //         decoration: BoxDecoration(
+                //           borderRadius:
+                //               BorderRadius.circular(30), // Coins arrondis
+                //         ),
+                //         child: ClipRRect(
+                //           // Découpe l'image pour respecter le borderRadius
+                //           borderRadius: BorderRadius.circular(30),
+                //           child: Image.asset(
+                //             "assets/img/image 14.png",
+                //             height: 287, // Taille forcée
+                //             width: 225, // Taille forcée
+                //             fit: BoxFit
+                //                 .cover, // Remplit le Container tout en gardant le ratio
+                //           ),
+                //         ),
+                //       ),
+                //       SizedBox(
+                //         width: 15,
+                //       ),
+                //       Container(
+                //         height: 287,
+                //         width: 225,
+                //         decoration: BoxDecoration(
+                //           borderRadius:
+                //               BorderRadius.circular(30), // Coins arrondis
+                //         ),
+                //         child: ClipRRect(
+                //           // Découpe l'image pour respecter le borderRadius
+                //           borderRadius: BorderRadius.circular(30),
+                //           child: Image.asset(
+                //             "assets/img/image 21.png",
+                //             height: 287, // Taille forcée
+                //             width: 225, // Taille forcée
+                //             fit: BoxFit
+                //                 .cover, // Remplit le Container tout en gardant le ratio
+                //           ),
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
+                
+                  SizedBox(
+                  height: 300, // Hauteur fixe pour la liste horizontale
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal, // Liste horizontale
+                    itemCount: img.length, // Nombre d'éléments dans la liste
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0), // Espace autour de chaque image
                         child: ClipRRect(
-                          // Découpe l'image pour respecter le borderRadius
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius: BorderRadius.circular(20), // Coins arrondis
                           child: Image.asset(
-                            "assets/img/image 14.png",
-                            height: 287, // Taille forcée
-                            width: 225, // Taille forcée
-                            fit: BoxFit
-                                .cover, // Remplit le Container tout en gardant le ratio
+                            img[index], // Chemin de l'image
+                            width: 200, // Largeur de l'image
+                            height: 300, // Hauteur de l'image
+                            fit: BoxFit.cover, // Ajuste l'image pour remplir l'espace
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      Container(
-                        height: 287,
-                        width: 225,
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              BorderRadius.circular(30), // Coins arrondis
-                        ),
-                        child: ClipRRect(
-                          // Découpe l'image pour respecter le borderRadius
-                          borderRadius: BorderRadius.circular(30),
-                          child: Image.asset(
-                            "assets/img/image 21.png",
-                            height: 287, // Taille forcée
-                            width: 225, // Taille forcée
-                            fit: BoxFit
-                                .cover, // Remplit le Container tout en gardant le ratio
-                          ),
-                        ),
-                      ),
-                    ],
+                      );
+                    },
                   ),
                 ),
+                
+                
                 SizedBox(
                   height: 15,
                 ),
@@ -282,15 +312,12 @@ class Home2 extends StatelessWidget {
                           width: 120,
                         ),
                       ),
-                      
                     ],
-                    
                   ),
-                  
                 ),
                 SizedBox(
-                        height: 10,
-                      ),
+                  height: 10,
+                ),
               ],
             ),
           ),

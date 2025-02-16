@@ -150,6 +150,7 @@ class home extends StatelessWidget {
                     child: Text(
                       "Get Started",
                       style: TextStyle(
+                        color: Colors.white,
                         fontSize: 18,
                       ),
                     ),
