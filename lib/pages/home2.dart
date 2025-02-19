@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:app_close/pages/home3.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -10,7 +11,6 @@ class Home2 extends StatelessWidget {
     'assets/img/image 14.png',
     'assets/img/image 15.png',
     'assets/img/image 21.png',
-    'assets/img/Mask Group.png'
   ];
   @override
   Widget build(BuildContext context) {
@@ -89,12 +89,12 @@ class Home2 extends StatelessWidget {
                   Align(
                     alignment: Alignment.topLeft,
                     child: SizedBox(
-                      width: 230,
+                      width: 260,
                       height: 64,
                       child: TextField(
                         decoration: InputDecoration(
                             prefixIcon: Icon(Icons.search),
-                            hintText: "Seavfffrch your style",
+                            hintText: "Search your style",
                             border: OutlineInputBorder(
                                 borderSide: BorderSide.none,
                                 borderRadius: BorderRadius.circular(20)),
@@ -216,30 +216,36 @@ class Home2 extends StatelessWidget {
                 //     ],
                 //   ),
                 // ),
-                
-                  SizedBox(
+                SizedBox(
                   height: 300, // Hauteur fixe pour la liste horizontale
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal, // Liste horizontale
                     itemCount: img.length, // Nombre d'éléments dans la liste
                     itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0), // Espace autour de chaque image
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20), // Coins arrondis
-                          child: Image.asset(
-                            img[index], // Chemin de l'image
-                            width: 200, // Largeur de l'image
-                            height: 300, // Hauteur de l'image
-                            fit: BoxFit.cover, // Ajuste l'image pour remplir l'espace
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> home3(imagePath: img[index],)));
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(
+                              right: 10), // Espace autour de chaque image
+                          child: ClipRRect(
+                            borderRadius:
+                                BorderRadius.circular(20), // Coins arrondis
+                            child: Image.asset(
+                              img[index], // Chemin de l'image
+                              width: 200, // Largeur de l'image
+                              height: 300, // Hauteur de l'image
+                              fit: BoxFit
+                                  .cover, // Ajuste l'image pour remplir l'espace
+                            ),
                           ),
                         ),
                       );
                     },
                   ),
                 ),
-                
-                
+
                 SizedBox(
                   height: 15,
                 ),
