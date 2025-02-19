@@ -5,13 +5,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Home2 extends StatelessWidget {
-  const Home2({super.key});
   // final <string>
-  static const List<String> img = [
+  static List<String> img1 = [
     'assets/img/image 14.png',
     'assets/img/image 15.png',
     'assets/img/image 21.png',
   ];
+  static const List<String> img2 = [
+    'assets/img/collection 2/image 11.png',
+    'assets/img/collection 2/image 19.png',
+    'assets/img/collection 2/image 20.png',
+    'assets/img/collection 2/image 25.png',
+    'assets/img/image 21.png',
+    'assets/img/image 15.png',
+    'assets/img/image 14.png',
+  ];
+  const Home2({super.key});
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -216,15 +225,21 @@ class Home2 extends StatelessWidget {
                 //     ],
                 //   ),
                 // ),
+
                 SizedBox(
                   height: 300, // Hauteur fixe pour la liste horizontale
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal, // Liste horizontale
-                    itemCount: img.length, // Nombre d'éléments dans la liste
+                    itemCount: img1.length, // Nombre d'éléments dans la liste
                     itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=> home3(imagePath: img[index],)));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => home3(
+                                        imagePath: img1[index],
+                                      )));
                         },
                         child: Padding(
                           padding: const EdgeInsets.only(
@@ -233,7 +248,7 @@ class Home2 extends StatelessWidget {
                             borderRadius:
                                 BorderRadius.circular(20), // Coins arrondis
                             child: Image.asset(
-                              img[index], // Chemin de l'image
+                              img1[index], // Chemin de l'image
                               width: 200, // Largeur de l'image
                               height: 300, // Hauteur de l'image
                               fit: BoxFit
@@ -269,61 +284,35 @@ class Home2 extends StatelessWidget {
                 SizedBox(
                   height: 15,
                 ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Image.asset(
-                          "assets/img/image 14.png",
-                          fit: BoxFit.cover,
-                          height: 200,
-                          width: 120,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Image.asset(
-                          "assets/img/image 15.png",
-                          fit: BoxFit.cover,
-                          height: 200,
-                          width: 120,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Image.asset(
-                          "assets/img/image 21.png",
-                          fit: BoxFit.cover,
-                          height: 200,
-                          width: 120,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 15,
-                      ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Image.asset(
-                          "assets/img/Mask Group.png",
-                          fit: BoxFit.cover,
-                          height: 200,
-                          width: 120,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
+                Container(
+                  height: 200,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: img2.length,
+                      itemBuilder: (context, index) {
+                        return GestureDetector(
+                          onDoubleTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: 
+                              (context)=>home3(imagePath: img2[index])
+                              )
+                            );
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image.asset(
+                                img2[index],
+                                width: 150,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        );
+                      }),
+                )
               ],
             ),
           ),

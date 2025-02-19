@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context)=> const home(),
         '/home2': (context)=> const Home2(),
-        '/home3': (context) => const home3(),
+        '/home3': (context) => const home3(imagePath: '',),
       },
     );
   }
